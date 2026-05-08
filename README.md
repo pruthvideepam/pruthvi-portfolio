@@ -76,12 +76,11 @@ Here is the folder structure of this app.
     |-- index.css
     |-- main.tsx
     |-- styles.ts
-  |- .env.example
-  |- .env/.env.local
   |- .gitignore
   |- bun.lock
   |- index.html
   |- netlify.toml
+  |- package-lock.json
   |- package.json
   |- postcss.config.cjs
   |- tailwind.config.ts
