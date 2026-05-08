@@ -12,6 +12,7 @@ import preview from "./preview.png";
 import web from "./web.png";
 
 import css from "./tech/css.png";
+import fastapi from "./tech/fastapi.svg";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
@@ -24,11 +25,10 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.svg";
 import typescript from "./tech/typescript.png";
+import pruthviGhibli from "./tech/pruthvi_ghibli.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import nif from "./company/nif.png";
+import artpark from "./company/artpark.png";
 
 import project1 from "./projects/project1.png";
 import project2 from "./projects/project2.png";
@@ -57,6 +57,7 @@ export {
   preview,
   web,
   css,
+  fastapi,
   docker,
   figma,
   git,
@@ -69,10 +70,8 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  nif,
+  artpark,
   project1,
   project2,
   project3,
@@ -86,4 +85,5 @@ export {
   youtube,
   linkedin,
   twitter,
+  pruthviGhibli
 };

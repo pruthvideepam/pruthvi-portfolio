@@ -5,6 +5,8 @@ import { SERVICES } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
+import { pruthviGhibli } from "../assets";
+import { p } from "framer-motion/client";
 
 type ServiceCardProps = {
   index: number;
@@ -50,16 +52,30 @@ export const About = () => {
         </motion.div>
 
         {/* Body */}
-        <motion.p
-          variants={fadeIn(undefined, undefined, 0.1, 1)}
-          className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          I'm a skilled website developer with experience in TypeScript and
-          Javascript, and expertise in frameworks like React, Node.js, and
-          Three.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
-        </motion.p>
+        <motion.div
+  variants={fadeIn(undefined, undefined, 0.1, 1)}
+  className="mt-4 flex flex-col md:flex-row items-center md:items-start gap-8"
+>
+  <p className="text-secondary text-[17px] max-w-3xl leading-[30px]">
+    I am an aspiring Software Engineer and full‑stack developer with a strong
+    foundation in data structures, algorithms, and scalable system design. I
+    enjoy building end‑to‑end products using React, Node.js, FastAPI, and
+    modern DevOps practices, with a focus on clean architecture, testing, and
+    monitoring. Through internships at NIF and ARTPARK (IISc), and projects
+    ranging from geospatial routing apps to AI‑powered platforms, I’ve
+    learned to take ownership of the entire lifecycle—from requirements and
+    UX to deployment and telemetry. I love solving real‑world problems and
+    collaborating with teams to ship reliable, user‑centric software.
+  </p>
+
+  <div className="shrink-0">
+    <img
+      src={pruthviGhibli}
+      alt="Pruthvi Deepam"
+      className="w-44 h-44 md:w-64 md:h-64 rounded-full object-cover border border-secondary/40 shadow-lg"
+    />
+  </div>
+</motion.div>
 
         {/* Service Card */}
         <div className="mt-20 flex flex-wrap gap-10">

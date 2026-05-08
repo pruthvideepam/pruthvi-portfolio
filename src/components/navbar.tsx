@@ -35,8 +35,8 @@ export const Navbar = ({ hide }: NavbarProps) => {
     <nav
       className={cn(
         styles.paddingX,
-        "w-full flex items-center py-5 fixed top-0 z-20 bg-primary",
-        isAtBottom || hide ? "mt-0" : "mt-20"
+        "w-full flex items-center py-5 fixed left-0 z-40 bg-primary/90 backdrop-blur-md border-b border-secondary/10 transition-all duration-300",
+        hide ? "top-0" : "top-16"
       )}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -51,7 +51,7 @@ export const Navbar = ({ hide }: NavbarProps) => {
         >
           <img src={logo} alt="Logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Shubham&nbsp;<span className="sm:block hidden">| Developer</span>
+            Pruthvi Deepam&nbsp;<span className="sm:block hidden">L A</span>
           </p>
         </Link>
 

@@ -93,32 +93,28 @@ export const Contact = () => {
 
     // send email
     emailjs
-      .send(
-        import.meta.env.VITE_APP_SERVICE_ID,
-        import.meta.env.VITE_APP_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Shubham",
-          from_email: form.email.trim().toLowerCase(),
-          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_KEY,
-      )
-      .then(() => toast.success("Thanks for contacting me."))
-      .catch((error) => {
-        // Error handle
-        console.log("[CONTACT_ERROR]: ", error);
-        toast.error("Something went wrong.");
-      })
-      .finally(() => {
-        setLoading(false);
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-        });
-      });
+  .send(
+    import.meta.env.VITE_APP_SERVICE_ID,
+    import.meta.env.VITE_APP_TEMPLATE_ID,
+    {
+      title: "New contact form submission",
+      name: form.name,
+      email: form.email.trim().toLowerCase(),
+      message: form.message,
+      time: new Date().toLocaleString(),
+    },
+    import.meta.env.VITE_APP_EMAILJS_KEY,
+  )
+  .then(() => toast.success("Thanks for contacting me."))
+  .catch((error) => {
+  console.log("[CONTACT_ERROR]: ", error);
+  alert(JSON.stringify(error));
+  toast.error("Something went wrong.");
+})
+  .finally(() => {
+    setLoading(false);
+    setForm({ name: "", email: "", message: "" });
+  });
   };
 
   return (

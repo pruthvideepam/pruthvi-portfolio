@@ -14,9 +14,13 @@ const Footer = () => {
       )}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <p className="text-white text-md font-bold flex">
-          &copy; Shubham {new Date().getFullYear()}. All rights reserved.
-        </p>
+        <p className="text-white text-md font-bold flex gap-1 items-center">
+  <span>&copy; {new Date().getFullYear()}</span>
+  <span>|</span>
+  <span>
+    Made with <span className="text-red-500">❤</span> by Pruthvi Deepam L A
+  </span>
+</p>
 
         {/* Nav Links (Desktop) */}
         <ul className="list-none hidden flex-row sm:flex gap-10">
