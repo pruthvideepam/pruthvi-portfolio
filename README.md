@@ -68,6 +68,8 @@ Here is the folder structure of this app.
     |-- hoc/
       |--- index.ts
       |--- section-wrapper.tsx
+    |-- hooks/
+      |--- useIsMobile.ts
     |-- utils/
       |--- lib.ts
       |--- motion.ts
