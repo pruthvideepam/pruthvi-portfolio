@@ -30,12 +30,12 @@ import pruthviGhibli from "./tech/pruthvi_ghibli.png";
 import nif from "./company/nif.png";
 import artpark from "./company/artpark.png";
 
-import project1 from "./projects/project1.png";
-import project2 from "./projects/project2.png";
-import project3 from "./projects/project3.png";
-import project4 from "./projects/project4.png";
-import project5 from "./projects/project5.png";
-import project6 from "./projects/project6.png";
+import project1 from "./projects/project1.webp";
+import project2 from "./projects/project2.webp";
+import project3 from "./projects/project3.webp";
+import project4 from "./projects/project4.webp";
+import project5 from "./projects/project5.webp";
+import project6 from "./projects/project6.webp";
 
 import user1 from "./testimonials/user1.jpg";
 import user2 from "./testimonials/user2.jpg";
