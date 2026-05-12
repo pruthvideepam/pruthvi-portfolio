@@ -15,10 +15,12 @@ import {
 import Banner from "./components/banner";
 import Footer from "./components/footer";
 import { cn } from "./utils/lib";
+import { useIsMobile } from "./hooks/useIsMobile";
 
 // App
 const App = () => {
   const [hide, setHide] = useState(true);
+  const isMobile = useIsMobile();
 
   return (
     <BrowserRouter>
@@ -30,7 +32,7 @@ const App = () => {
         <div
           className={cn(
             "bg-hero-pattern bg-cover bg-no-repeat bg-center transition-all duration-300",
-            hide ? "pt-20" : "pt-32"
+            hide ? "pt-20" : "pt-32",
           )}
         >
           {/* Navbar position also depends on banner */}
@@ -47,7 +49,8 @@ const App = () => {
         {/* Contact */}
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
+          {/* Stars only on non‑mobile to reduce lag */}
+          {!isMobile && <StarsCanvas />}
         </div>
 
         <Footer />

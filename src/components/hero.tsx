@@ -1,11 +1,14 @@
+// Hero.tsx
 import { motion } from "framer-motion";
 
 import { ComputersCanvas } from "./canvas";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
+import { useIsMobile } from "../hooks/useIsMobile";
 
-// Hero
 export const Hero = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -32,24 +35,28 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Computer Model */}
-      <ComputersCanvas />
+      {/* Computer Model only on desktop/tablet */}
+      {!isMobile && <ComputersCanvas />}
 
       {/* Scroll to about section */}
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
+            {isMobile ? (
+              // On mobile, static dot (no infinite animation)
+              <div className="w-3 h-3 rounded-full bg-secondary mb-1" />
+            ) : (
+              // On desktop, keep the nice Framer Motion animation
+              <motion.div
+                animate={{ y: [0, 24, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-3 h-3 rounded-full bg-secondary mb-1"
+              />
+            )}
           </div>
         </a>
       </div>

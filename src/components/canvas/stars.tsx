@@ -1,18 +1,19 @@
 import { Points, PointMaterial, Preload } from "@react-three/drei";
-import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
 import { useRef, Suspense, useState } from "react";
 import type { Points as PointsType } from "three";
+import type { ComponentProps } from "react";
+
+type StarsProps = ComponentProps<typeof Points>;
 
 // Stars
-const Stars = (props: PointsProps) => {
+const Stars = (props: StarsProps) => {
   const ref = useRef<PointsType | null>(null);
-  // For each star
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(6000), { radius: 1.2 }),
   );
 
-  // Rotate multiple stars
   useFrame((_state, delta) => {
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
@@ -22,7 +23,6 @@ const Stars = (props: PointsProps) => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      {/* Points */}
       <Points
         ref={ref}
         positions={new Float32Array(sphere)}
@@ -30,12 +30,11 @@ const Stars = (props: PointsProps) => {
         frustumCulled
         {...props}
       >
-        {/* Each point material */}
         <PointMaterial
           transparent
           color="#f272c8"
           size={0.002}
-          sizeAttentuation
+          sizeAttenuation
           depthWrite={false}
         />
       </Points>
@@ -47,14 +46,10 @@ const Stars = (props: PointsProps) => {
 const StarsCanvas = () => {
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">
-      {/* Canvas */}
       <Canvas camera={{ position: [0, 0, 1] }}>
-        {/* Show stars if not fallback */}
         <Suspense fallback={null}>
           <Stars />
         </Suspense>
-
-        {/* preload all */}
         <Preload all />
       </Canvas>
     </div>
