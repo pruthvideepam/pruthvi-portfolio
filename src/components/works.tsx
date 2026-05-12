@@ -114,6 +114,8 @@ const ProjectCard = ({
 export const Works = () => {
   const isMobile = useIsMobile();
 
+  console.log("PROJECTS length", PROJECTS.length);
+
   return (
     <SectionWrapper>
       <>
